@@ -1,0 +1,47 @@
+<table style="float: left;"  mat-table [dataSource]="workers" class="mat-elevation-z8">
+
+    <ng-container matColumnDef="id">
+      <th mat-header-cell *matHeaderCellDef> No. </th>
+      <td mat-cell *matCellDef="let element"> {{element.id}} </td>
+    </ng-container>
+  
+    <ng-container matColumnDef="name">
+      <th mat-header-cell *matHeaderCellDef> Name </th>
+      <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+    </ng-container>
+  
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;" (click)="getFlight(row)"></tr>
+  </table>
+  
+  <table style="float:left;" mat-table [dataSource]="flights" class="mat-elevation-z8">
+
+    <ng-container matColumnDef="flight">
+      <th mat-header-cell *matHeaderCellDef> Flight number </th>
+      <td mat-cell *matCellDef="let element"> {{element.num}} </td>
+    </ng-container>
+  
+    <ng-container matColumnDef="origin">
+      <th mat-header-cell *matHeaderCellDef> Origin </th>
+      <td mat-cell *matCellDef="let element"> {{element.from}} </td>
+    </ng-container>
+    
+    <ng-container matColumnDef="origin_data">
+        <th mat-header-cell *matHeaderCellDef> Origin date </th>
+        <td mat-cell *matCellDef="let element"> {{element.from_date}} </td>
+      </ng-container>
+    
+      <ng-container matColumnDef="dest">
+        <th mat-header-cell *matHeaderCellDef> Destination </th>
+        <td mat-cell *matCellDef="let element"> {{element.to}} </td>
+      </ng-container>
+    
+      <ng-container matColumnDef="dest_date">
+        <th mat-header-cell *matHeaderCellDef> Destination Date </th>
+        <td mat-cell *matCellDef="let element"> {{element.to_date}} </td>
+      </ng-container>
+  
+    <tr mat-header-row *matHeaderRowDef="displayedColumns2"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns2;" (click)="getFlightInfo(row)"></tr>
+  </table>
+  

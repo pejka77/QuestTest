@@ -1,0 +1,20 @@
+table {
+    background-color: lightgray;
+    border-width: 5;
+    border-color: black;
+}
+tr:hover {
+    background: whitesmoke;
+  }
+
+table td{
+    border-left: 1px solid #000;
+    border-right: 1px solid #000;
+
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+table th{
+    position: relative;
+}
